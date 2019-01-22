@@ -1,0 +1,199 @@
+﻿@model sheeps3.Models.Hand
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Scoreboard";
+}
+
+    <h1 style="text-align:center">Current Hand</h1>
+    <form method="post" asp-action="HandsController/AddHand">
+       
+            <div class="col-lg-1"></div>
+            
+            <div class="col-lg-11">
+
+            <div class="col-lg-1">
+                <label style="font-size:12pt; color:cornflowerblue" asp-for="Dealer">Picker</label>
+            </div>
+            <div class="col-lg-1">
+                <label style="font-size:12pt; color:cornflowerblue" asp-for="Picker">Partner</label>
+            </div>
+            <div class="col-lg-3">
+            <div class="row">
+            <div class="col-lg-3">
+                <label style="font-size:12pt; color:cornflowerblue " asp-for="BQBlitz">BQB</label>
+            </div>
+            <div class="col-lg-3">
+                <label style="font-size:12pt; color:cornflowerblue" asp-for="RQBlitz">RQB</label>
+            </div>
+            <div class="col-lg-3">
+                <label style="font-size:12pt; color:cornflowerblue" asp-for="BJBlitz">BJB</label>
+            </div>
+            <div class="col-lg-3">
+                <label style="font-size:12pt; color:cornflowerblue" asp-for="RJBlitz">RJB</label>
+            </div>
+            </div>
+            </div>
+            <div class="col-lg-1">
+                <label style="font-size:12pt; color:cornflowerblue" asp-for="Crack">Crack</label>
+            </div>
+            <div class="col-lg-1">
+                <label style="font-size:12pt; color:cornflowerblue" asp-for="CrackBack">CrackBack</label>
+            </div>
+            <div class="col-lg-1">
+                <label style="font-size:12pt; color:cornflowerblue" asp-for="ReCrack">ReCrack</label>
+            </div>
+            
+            <div class="col-lg-2"></div>
+            <div class="col-lg-1">
+                <label style="font-size:12pt; color:red">Cracks</label>
+            </div>
+            <div class="col-lg-1">
+                <label style="font-size:12pt; color:red">Score</label>
+            </div>
+                
+           
+        </div>
+
+        @foreach (var player in ViewBag.AvailableGameHistories)
+        {
+            if (player.PlayerActive.Equals(true))
+            {
+                if (player.PlayerInHand.Equals(true))
+                {
+                <div class="row">
+            <div class="col-lg-1">
+                <p style="font-size:14pt; color:blueviolet">@player.PlayerNickName</p>
+            </div>
+            <div class="col-lg-11">
+
+            <div class="col-lg-1" style="text-align:center; color:blue">
+                <input type="checkbox" style="color:blue" name="picker" value="@player.PlayerNickName" />
+                <input type="hidden" value="@player.GameInt" name="GameInt" />
+            </div>
+            <div class="col-lg-1" style="text-align:center">
+                <input type="checkbox" name="partner" value="@player.PlayerNickName" />
+            </div>
+            <div class="col-lg-3">
+            <div class="row">
+            <div class="col-lg-3" style="text-align:center">
+                <input type="checkbox" name="BQBlitz" value="@player.PlayerNickName" />
+            </div>
+            <div class="col-lg-3" style="text-align:center">
+                <input type="checkbox" name="RQBlitz" value="@player.PlayerNickName" />
+            </div>
+            <div class="col-lg-3" style="text-align:center">
+                <input type="checkbox" name="BJBlitz" value="@player.PlayerNickName" />
+            </div>
+            <div class="col-lg-3" style="text-align:center">
+                <input type="checkbox" name="RJBlitz" value="@player.PlayerNickName" />
+            </div>
+            </div>
+            </div>
+            <div class="col-lg-1" style="text-align:center">
+                <input type="checkbox" name="Crack" value="@player.PlayerNickName" />
+            </div>
+            <div class="col-lg-1" style="text-align:center">
+                <input type="checkbox" name="CrackBack" value="@player.PlayerNickName" />
+            </div>
+            <div class="col-lg-1" style="text-align:center">
+                <input type="checkbox" name="ReCrack" value="@player.PlayerNickName" />
+            </div>
+            <div class="col-lg-4">
+                <div class="col-lg-5"></div>
+          
+                <div class="col-lg-4">
+                    <p style="text-align:center">@player.CrackCount</p>
+                </div>
+                <div>
+                    <p style="text-align:center">@(player.Score * .10) </p>
+                </div>
+            </div>
+             </div>
+        </div>
+                }
+                else
+                {
+                <div class="row">
+                    <div class="col-lg-1">
+                        <p style="font-size:14pt; color:blueviolet">@player.PlayerNickName</p>
+                    </div>
+                    <div class="col-lg-11">
+
+                        <div class="col-lg-1" style="text-align:center; color:blue">
+                            <input type="checkbox" style="color:blue" name="picker" value="@player.PlayerNickName" disabled />
+                        </div>
+                        <div class="col-lg-1" style="text-align:center">
+                            <input type="checkbox" name="partner" value="@player.PlayerNickName" disabled />
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="row">
+                                <div class="col-lg-3" style="text-align:center">
+                                    <input type="checkbox" name="BQBlitz" value="@player.PlayerNickName" disabled />
+                                </div>
+                                <div class="col-lg-3" style="text-align:center">
+                                    <input type="checkbox" name="RQBlitz" value="@player.PlayerNickName" disabled />
+                                </div>
+                                <div class="col-lg-3" style="text-align:center">
+                                    <input type="checkbox" name="BJBlitz" value="@player.PlayerNickName" disabled />
+                                </div>
+                                <div class="col-lg-3" style="text-align:center">
+                                    <input type="checkbox" name="RJBlitz" value="@player.PlayerNickName" disabled />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1" style="text-align:center">
+                            <input type="checkbox" name="Crack" value="@player.PlayerNickName" disabled />
+                        </div>
+                        <div class="col-lg-1" style="text-align:center">
+                            <input type="checkbox" name="CrackBack" value="@player.PlayerNickName" disabled />
+                        </div>
+                        <div class="col-lg-1" style="text-align:center">
+                            <input type="checkbox" name="ReCrack" value="@player.PlayerNickName" disabled />
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="col-lg-5"></div>
+
+                            <div class="col-lg-4">
+                                <p style="text-align:center">@player.CrackCount</p>
+                            </div>
+                            <div>
+                                <p style="text-align:center">@(player.Score * .10) </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            }
+        }
+
+    <div class="row">
+        <div class="col-lg-6">
+        <label for="Deals" style="font-size:20pt">Number of deals:</label>
+                <input type="radio" name="Deals" value="1" checked="checked" />
+                <input type="radio" name="Deals" value="2"/>
+                <input type="radio" name="Deals" value="3" />
+       
+        <select name="Result" style="float:right">
+            <option value="Select">Result Of Hand</option>
+            <option value="winWithSchneider">Won With Schneider</option>
+            <option value="winNoSchneider">Won No Schneider</option>
+            <option value="winNoTricker">Won No Tricker</option>
+            <option value="lostWithSchneider">Lost With Schnedier</option>
+            <option value="lostNoSchneider">Lost No Schneider</option>
+            <option value="lostNoTricker">Lost No Tricker</option>
+        </select>
+        </div>
+        <div class="col-lg-6">
+    <button type="submit" class="btn btn-success" style="float:left">SCORE HAND</button>
+        </div>
+    </div>
+    </form>
+
+    @foreach (var hand in ViewBag.AvailableGames) {
+        
+            { 
+            <h1>DOUBLERS: @hand.CurrentDoublers</h1>
+            }
+    }

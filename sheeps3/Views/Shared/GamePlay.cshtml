@@ -1,0 +1,12 @@
+﻿@model sheeps3.Models.Hand
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Scoreboard";
+}
+
+    <h1 style="text-align:center">Current Hand</h1>
+     <a asp-controller="HandsController" asp-action="StartGame"> Hand</a>
+</html>
+      

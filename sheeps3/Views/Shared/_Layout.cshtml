@@ -1,0 +1,32 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<html>
+<head>
+    <title>@ViewBag.title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Sheeps!</a>
+            </div>
+            <ul class="nav navbar-nav">
+
+                <li><a asp-controller="Hands" asp-action="Index">Game</a></li>
+                <li><a asp-controller="Players" asp-action="Index">Players</a></li>
+                <li><a asp-controller="Stats" asp-action="Index">Stats</a></li>
+
+            </ul>
+        </div>
+    </nav>
+    @RenderBody()
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+
+</body>
+</html>

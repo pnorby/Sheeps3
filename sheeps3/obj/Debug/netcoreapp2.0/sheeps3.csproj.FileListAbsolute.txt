@@ -1,0 +1,11 @@
+C:\Users\Mathea\Desktop\sheeps3\sheeps3\obj\Debug\netcoreapp2.0\sheeps3.csprojResolveAssemblyReference.cache
+C:\Users\Mathea\Desktop\sheeps3\sheeps3\obj\Debug\netcoreapp2.0\sheeps3.csproj.CoreCompileInputs.cache
+C:\Users\Mathea\Desktop\sheeps3\sheeps3\obj\Debug\netcoreapp2.0\sheeps3.AssemblyInfoInputs.cache
+C:\Users\Mathea\Desktop\sheeps3\sheeps3\obj\Debug\netcoreapp2.0\sheeps3.AssemblyInfo.cs
+C:\Users\Mathea\Desktop\sheeps3\sheeps3\bin\Debug\netcoreapp2.0\sheeps3.deps.json
+C:\Users\Mathea\Desktop\sheeps3\sheeps3\bin\Debug\netcoreapp2.0\sheeps3.runtimeconfig.json
+C:\Users\Mathea\Desktop\sheeps3\sheeps3\bin\Debug\netcoreapp2.0\sheeps3.runtimeconfig.dev.json
+C:\Users\Mathea\Desktop\sheeps3\sheeps3\bin\Debug\netcoreapp2.0\sheeps3.dll
+C:\Users\Mathea\Desktop\sheeps3\sheeps3\bin\Debug\netcoreapp2.0\sheeps3.pdb
+C:\Users\Mathea\Desktop\sheeps3\sheeps3\obj\Debug\netcoreapp2.0\sheeps3.dll
+C:\Users\Mathea\Desktop\sheeps3\sheeps3\obj\Debug\netcoreapp2.0\sheeps3.pdb
